@@ -1,0 +1,19 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "to-do web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devashrlucas/to-do.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/devashrlucas/to-do/issues"
+  },
+  "homepage": "https://github.com/devashrlucas/to-do#readme"
+}
