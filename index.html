@@ -8,16 +8,19 @@
     <body>
         <div class="task-list">
             <label>Add task</label><input type="text" id="task-list__add"></input>
-            <button class="task-list_buttons" id="add" onclick="addTask()">+</button>
+            <button class="task-list_buttons" id="add">+</button>
         </div>
         <div class="task-list"> 
             <ul id="task-list__tasks"> 
-                <li>test 1</li>
             </ul>
             <div class="task-list_buttons">
                 <button id="delete">-</button>
-                <button id="edit">✎</button>
+                <button class="task-list_buttons" id="edit">✎</button>
             </div>
          </div>
+        <script type="text/javascript">
+         document.getElementById('add').onclick = addTask;
+         document.getElementById('edit').onclick = editTask;
+        </script>
     </body>
 </html>
