@@ -3,6 +3,8 @@ module.exports.testFunction = function(x) {
     return x;
 */
 
+var taskBoxElement = document.querySelector('#task-list__tasks');
+
 
 function addTask() {
   let li = document.createElement('li');
@@ -15,6 +17,13 @@ function addTask() {
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
 }
 
+
 function editTask() {
-    document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('#task-list__tasks')) {
+      document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
+    } else {
+      document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
+    }
+  });
 }
