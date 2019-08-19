@@ -17,13 +17,12 @@ function addTask() {
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
 }
 
-
 function editTask() {
-  document.addEventListener('click', function (event) {
-    if (event.target.closest('#task-list__tasks')) {
-      document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
-    } else {
-      document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
-    }
-  });
+  if (document.getElementById('edit').value === 'OFF') {
+    document.getElementById('edit').value = 'ON';
+    document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
+  } else if (document.getElementById('edit').value === 'ON') {
+    document.getElementById('edit').value = 'OFF';
+    document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
+  }
 }
