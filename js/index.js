@@ -9,7 +9,7 @@ var taskBoxElement = document.querySelector('#task-list__tasks');
 function addTask() {
   let li = document.createElement('li');
   let liText = document.createTextNode('');
-  let taskText = document.getElementById('task-list__add').value;
+  let taskText = document.getElementById('task-list__input').value;
 
   liText = taskText;
   li.append(liText);
@@ -18,11 +18,11 @@ function addTask() {
 }
 
 function editTask() {
-  if (document.getElementById('edit').value === 'OFF') {
-    document.getElementById('edit').value = 'ON';
+  if (document.getElementById('task-list__edit').value === 'OFF') {
+    document.getElementById('task-list__edit').value = 'ON';
     document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
-  } else if (document.getElementById('edit').value === 'ON') {
-    document.getElementById('edit').value = 'OFF';
+  } else if (document.getElementById('task-list__edit').value === 'ON') {
+    document.getElementById('task-list__edit').value = 'OFF';
     document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
   }
 }

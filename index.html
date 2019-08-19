@@ -7,22 +7,21 @@
     </head>
     <body>
         <div class="task-list">
-            <label>Add task</label><input type="text" id="task-list__add"></input>
-            <button class="task-list_buttons" id="add">+</button>
+            <label>Add task</label><input type="text" id="task-list__input"></input>
+            <button class="task-list_buttons" id="task-list__add">+</button>
         </div>
         <div class="task-list"> 
             <ul id="task-list__tasks"> 
             </ul>
             <div class="task-list_buttons">
-                <button id="delete">-</button>
-                <label> edit
-                    <input type="checkbox" id='edit' value="OFF">
-                </label>
+                <button id="task-list__delete">-</button>
+                <label> edit</label>
+                    <input type="checkbox" id="task-list__edit" value="OFF">
             </div>
          </div>
         <script type="text/javascript">
-         document.getElementById('add').onclick = addTask;
-         document.getElementById('edit').onclick = editTask;
+         document.getElementById('task-list__add').onclick = addTask;
+         document.getElementById('task-list__edit').onclick = editTask;
         </script>
     </body>
 </html>
