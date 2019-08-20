@@ -11,10 +11,12 @@ function addTask() {
   let liText = document.createTextNode('');
   let taskText = document.getElementById('task-list__input').value;
 
+  document.getElementById('task-list__edit').value = 'OFF';
   liText = taskText;
   li.append(liText);
   document.getElementById('task-list__tasks').append(li);
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
+  document.getElementById('task-list__input').value = '';
 }
 
 function editTask() {
@@ -25,4 +27,8 @@ function editTask() {
     document.getElementById('task-list__edit').value = 'OFF';
     document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
   }
+}
+
+function removeTask() {
+  
 }
