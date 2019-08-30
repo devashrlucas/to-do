@@ -32,3 +32,7 @@ function editTask() {
 function removeTask() {
   
 }
+
+function completeTask() {
+
+}
