@@ -3,9 +3,6 @@ module.exports.testFunction = function(x) {
     return x;
 */
 
-var taskBoxElement = document.querySelector('#task-list__tasks');
-
-
 function addTask() {
   let li = document.createElement('li');
   let liText = document.createTextNode('');
@@ -19,6 +16,28 @@ function addTask() {
   document.getElementById('task-list__input').value = '';
 }
 
+let toggleHandler = function (event) {
+
+}
+
+
+let editTaskHandler = function (event) {
+  var tgt = event.target;
+  if (tgt.tagName.toUpperCase() == 'LI') {
+    tgt.setAttribute('contenteditable', 'true');
+  }
+}
+
+
+function editTask() {
+  if (document.getElementById('task-list__edit').value === 'ON') {
+    document.getElementById('task-list__tasks').addEventListener('click', editTaskHandler, true);
+  } 
+  if (document.getElementById('task-list__edit').value === 'OFF') {
+    document.getElementById('task-list__tasks').removeEventListener('click', editTaskHandler, true);
+  }
+}
+/*
 function editTask() {
   if (document.getElementById('task-list__edit').value === 'OFF') {
     document.getElementById('task-list__edit').value = 'ON';
@@ -42,10 +61,15 @@ function deleteTask() {
         tgt.parentNode.removeChild(tgt);
       }
     });
-  } else if (document.getElementById('task-list__delete').value === 'ON') {
+  }
+  if (document.getElementById('task-list__delete').value === 'ON') {
     document.getElementById('task-list__delete').value = 'OFF';
+    document.getElementById('task-list__tasks').addEventListener('click', function (event) {
+
+    });
   }
 }
+*/
 
 function completeTask() {
 
