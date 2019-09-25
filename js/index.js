@@ -16,60 +16,31 @@ function addTask() {
   document.getElementById('task-list__input').value = '';
 }
 
-let toggleHandler = function (event) {
 
+function editTask() {
+  if (document.getElementById('task-list__edit').checked === true) {
+    document.getElementById('task-list__tasks').setAttribute('contenteditable', 'true');
+  } else if (document.getElementById('task-list__edit').checked === false) {
+    document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
+  }
 }
 
-
-let editTaskHandler = function (event) {
+let taskListEventHandler = function (event) {
   var tgt = event.target;
   if (tgt.tagName.toUpperCase() == 'LI') {
-    tgt.setAttribute('contenteditable', 'true');
+    tgt.parentNode.removeChild(tgt);
   }
-}
+};
 
-
-function editTask() {
-  if (document.getElementById('task-list__edit').value === 'ON') {
-    document.getElementById('task-list__tasks').addEventListener('click', editTaskHandler, true);
-  } 
-  if (document.getElementById('task-list__edit').value === 'OFF') {
-    document.getElementById('task-list__tasks').removeEventListener('click', editTaskHandler, true);
-  }
-}
-/*
-function editTask() {
-  if (document.getElementById('task-list__edit').value === 'OFF') {
-    document.getElementById('task-list__edit').value = 'ON';
-    document.getElementById('task-list__tasks').addEventListener('click', function (event) {
-      var tgt = event.target;
-      if (tgt.tagName.toUpperCase() == 'LI') {
-        tgt.setAttribute('contenteditable', 'true');
-      }
-    });
-  } else if (document.getElementById('task-list__edit').value === 'ON') {
-    document.getElementById('task-list__edit').value = 'OFF';
-  }
-}
 
 function deleteTask() {
-  if (document.getElementById('task-list__delete').value === 'OFF') {
-    document.getElementById('task-list__delete').value = 'ON';
-    document.getElementById('task-list__tasks').addEventListener('click', function (event) {
-      var tgt = event.target;
-      if (tgt.tagName.toUpperCase() == 'LI') {
-        tgt.parentNode.removeChild(tgt);
-      }
-    });
-  }
-  if (document.getElementById('task-list__delete').value === 'ON') {
-    document.getElementById('task-list__delete').value = 'OFF';
-    document.getElementById('task-list__tasks').addEventListener('click', function (event) {
-
-    });
+  if (document.getElementById('task-list__delete').checked === true) {
+    document.getElementById('task-list__tasks').addEventListener('click', taskListEventHandler, true);
+  } else if (document.getElementById('task-list__delete').checked === false) {
+    document.getElementById('task-list__tasks').removeEventListener('click', taskListEventHandler, true);
   }
 }
-*/
+
 
 function completeTask() {
 
