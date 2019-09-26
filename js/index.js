@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /*
 module.exports.testFunction = function(x) {
     return x;
@@ -7,9 +8,11 @@ function addTask() {
   let li = document.createElement('li');
   let liText = document.createTextNode('');
   let taskText = document.getElementById('task-list__input').value;
+  let checkbox = document.createElement('input');
 
-  document.getElementById('task-list__edit').value = 'OFF';
+  checkbox.type = 'checkbox';
   liText = taskText;
+  li.append(checkbox);
   li.append(liText);
   document.getElementById('task-list__tasks').append(li);
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
@@ -43,5 +46,5 @@ function deleteTask() {
 
 
 function completeTask() {
-
+  
 }
