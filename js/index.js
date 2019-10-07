@@ -8,11 +8,12 @@ function addTask() {
   let li = document.createElement('li');
   let liText = document.createTextNode('');
   let taskText = document.getElementById('task-list__input').value;
-  let checkbox = document.createElement('input');
+  //let checkbox = document.createElement('input');
 
-  checkbox.type = 'checkbox';
+  //checkbox.type = 'checkbox';
+  //checkbox.setAttribute('className', 'task-list__complete');
   liText = taskText;
-  li.append(checkbox);
+  //li.append(checkbox);
   li.append(liText);
   document.getElementById('task-list__tasks').append(li);
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
@@ -28,7 +29,7 @@ function editTask() {
   }
 }
 
-let taskListEventHandler = function (event) {
+let deleteTaskEventHandler = function (event) {
   var tgt = event.target;
   if (tgt.tagName.toUpperCase() == 'LI') {
     tgt.parentNode.removeChild(tgt);
@@ -38,13 +39,24 @@ let taskListEventHandler = function (event) {
 
 function deleteTask() {
   if (document.getElementById('task-list__delete').checked === true) {
-    document.getElementById('task-list__tasks').addEventListener('click', taskListEventHandler, true);
+    document.getElementById('task-list__tasks').addEventListener('click', deleteTaskEventHandler, true);
   } else if (document.getElementById('task-list__delete').checked === false) {
-    document.getElementById('task-list__tasks').removeEventListener('click', taskListEventHandler, true);
+    document.getElementById('task-list__tasks').removeEventListener('click', deleteTaskEventHandler, true);
   }
 }
 
 
+let completeTaskEventHandler = function (event) {
+  var tgt = event.target;
+  if (tgt.tagName.toUpperCase() == 'LI') {
+   tgt.style.textDecoration = 'line-through';
+  }
+};
+
 function completeTask() {
-  
-}
+  if (document.getElementById('task-list__complete').checked === true) {
+    document.getElementById('task-list__tasks').addEventListener('click', completeTaskEventHandler, true);
+  } else if (document.getElementById('task-list__complete').checked === false) {
+    document.getElementById('task-list__tasks').removeEventListener('click', completeTaskEventHandler, true);
+  }
+}     

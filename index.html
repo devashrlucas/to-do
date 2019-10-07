@@ -15,15 +15,18 @@
             </ul>
             <div class="task-list_buttons">
                 <label> delete</label>
-                <input type="checkbox" class='task-list__toggle' id="task-list__delete">
+                <input type="checkbox" class="task-list__toggle" id="task-list__delete">
                 <label> edit</label>
-                <input type="checkbox" class='task-list__toggle' id="task-list__edit">
+                <input type="checkbox" class="task-list__toggle" id="task-list__edit">
+                <label> complete</label>
+                <input type="checkbox" class="task-list__toggle" id="task-list__complete">
             </div>
          </div>
         <script type="text/javascript">
-         document.getElementById('task-list__add').onclick = addTask;
-         document.getElementById('task-list__edit').onclick = editTask;
-         document.getElementById('task-list__delete').onclick = deleteTask;
+         document.getElementById("task-list__add").onclick = addTask;
+         document.getElementById("task-list__edit").onclick = editTask;
+         document.getElementById("task-list__delete").onclick = deleteTask;
+         document.getElementById("task-list__complete").onclick = completeTask;
         </script>
     </body>
 </html>
