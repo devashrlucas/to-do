@@ -7,19 +7,21 @@
     </head>
     <body>
         <div class="task-list">
-            <label>Add task</label><input type="text" id="task-list__input"></input>
+            <label>Add task </label><input type="text" id="task-list__input"></input>
             <button class="task-list_buttons" id="task-list__add">+</button>
         </div>
         <div class="task-list"> 
             <ul id="task-list__tasks"> 
             </ul>
             <div class="task-list_buttons">
-                <label> delete</label>
+                <label> Delete</label>
                 <input type="checkbox" class="task-list__toggle" id="task-list__delete">
-                <label> edit</label>
+                <label> Edit</label>
                 <input type="checkbox" class="task-list__toggle" id="task-list__edit">
-                <label> complete</label>
+                <label> Complete</label>
                 <input type="checkbox" class="task-list__toggle" id="task-list__complete">
+                <label> Not finished?</label>
+                <input type="checkbox" class="task-list__toggle" id="task-list__undo">
             </div>
          </div>
         <script type="text/javascript">
@@ -27,6 +29,7 @@
          document.getElementById("task-list__edit").onclick = editTask;
          document.getElementById("task-list__delete").onclick = deleteTask;
          document.getElementById("task-list__complete").onclick = completeTask;
+         document.getElementById("task-list__undo").onclick = undoComplete;
         </script>
     </body>
 </html>

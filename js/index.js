@@ -1,19 +1,10 @@
-/* eslint-disable eqeqeq */
-/*
-module.exports.testFunction = function(x) {
-    return x;
-*/
 
 function addTask() {
-  let li = document.createElement('li');
+  const li = document.createElement('li');
   let liText = document.createTextNode('');
-  let taskText = document.getElementById('task-list__input').value;
-  //let checkbox = document.createElement('input');
+  const taskText = document.getElementById('task-list__input').value;
 
-  //checkbox.type = 'checkbox';
-  //checkbox.setAttribute('className', 'task-list__complete');
   liText = taskText;
-  //li.append(checkbox);
   li.append(liText);
   document.getElementById('task-list__tasks').append(li);
   document.getElementById('task-list__tasks').setAttribute('contenteditable', 'false');
@@ -29,9 +20,9 @@ function editTask() {
   }
 }
 
-let deleteTaskEventHandler = function (event) {
-  var tgt = event.target;
-  if (tgt.tagName.toUpperCase() == 'LI') {
+const deleteTaskEventHandler = function (event) {
+  const tgt = event.target;
+  if (tgt.tagName.toUpperCase() === 'LI') {
     tgt.parentNode.removeChild(tgt);
   }
 };
@@ -46,10 +37,10 @@ function deleteTask() {
 }
 
 
-let completeTaskEventHandler = function (event) {
-  var tgt = event.target;
-  if (tgt.tagName.toUpperCase() == 'LI') {
-   tgt.style.textDecoration = 'line-through';
+const completeTaskEventHandler = function (event) {
+  const tgt = event.target;
+  if (tgt.tagName.toUpperCase() === 'LI') {
+    tgt.style.textDecoration = 'line-through';
   }
 };
 
@@ -59,4 +50,19 @@ function completeTask() {
   } else if (document.getElementById('task-list__complete').checked === false) {
     document.getElementById('task-list__tasks').removeEventListener('click', completeTaskEventHandler, true);
   }
-}     
+}
+
+const undoCompleteTaskEventHandler = function (event) {
+  const tgt = event.target;
+  if (tgt.tagName.toUpperCase() === 'LI') {
+    tgt.style.textDecoration = 'none';
+  }
+};
+
+function undoComplete() {
+  if (document.getElementById('task-list__undo').checked === true) {
+    document.getElementById('task-list__tasks').addEventListener('click', undoCompleteTaskEventHandler, true);
+  } else if (document.getElementById('task-list__undo').checked === false) {
+    document.getElementById('task-list__tasks').removeEventListener('click', undoCompleteTaskEventHandler, true);
+  }
+}
