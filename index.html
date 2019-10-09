@@ -3,27 +3,32 @@
     <head>
         <script type="text/javascript" src="js/index.js"></script>
         <link rel="stylesheet" href="css/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap" rel="stylesheet">
         <title>To-do app</title>
     </head>
     <body>
-        <div class="task-list">
-            <label>Add task </label><input type="text" id="task-list__input"></input>
-            <button class="task-list_buttons" id="task-list__add">+</button>
-        </div>
-        <div class="task-list"> 
-            <ul id="task-list__tasks"> 
-            </ul>
-            <div class="task-list_buttons">
-                <label> Delete</label>
-                <input type="checkbox" class="task-list__toggle" id="task-list__delete">
-                <label> Edit</label>
-                <input type="checkbox" class="task-list__toggle" id="task-list__edit">
-                <label> Complete</label>
-                <input type="checkbox" class="task-list__toggle" id="task-list__complete">
-                <label> Not finished?</label>
-                <input type="checkbox" class="task-list__toggle" id="task-list__undo">
+        <div class="task-container">
+            <h1>To-Do List</h1>
+            <div class="task-list">
+                <h2>Add Task</h2><input type="text" id="task-list__input"></input>
+                <button class="task-list_buttons" id="task-list__add">+</button>
+                <h2>Tasks</h2>
+                <ul id="task-list__tasks"> 
+                </ul>
+                <hr>
+                <div class="task-list__buttons">
+                    <h2>Actions</h2>
+                    <label> Delete</label>
+                    <input type="checkbox" class="task-list__toggle" id="task-list__delete">
+                    <label> Edit</label>
+                    <input type="checkbox" class="task-list__toggle" id="task-list__edit">
+                    <label> Complete</label>
+                    <input type="checkbox" class="task-list__toggle" id="task-list__complete">
+                    <label> Not finished?</label>
+                    <input type="checkbox" class="task-list__toggle" id="task-list__undo">
+                </div>
             </div>
-         </div>
+        </div>
         <script type="text/javascript">
          document.getElementById("task-list__add").onclick = addTask;
          document.getElementById("task-list__edit").onclick = editTask;
