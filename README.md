@@ -9,7 +9,7 @@ Please note that this web app does not allow you to save a to-do list and all co
 
 ### Prerequisites
 
-None. The web app was desigened to work with the latest versions with all modern browsers.
+None. The web app was designed to work with the latest versions with all modern browsers.
 
 ## Built With
 
