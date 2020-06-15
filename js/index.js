@@ -51,7 +51,7 @@ function completeTask() {
     document.getElementById('task-list__tasks').removeEventListener('click', completeTaskEventHandler, true);
   }
 }
-
+/*
 const undoCompleteTaskEventHandler = function (event) {
   const tgt = event.target;
   if (tgt.tagName.toUpperCase() === 'LI') {
@@ -66,3 +66,4 @@ function undoComplete() {
     document.getElementById('task-list__tasks').removeEventListener('click', undoCompleteTaskEventHandler, true);
   }
 }
+*/
